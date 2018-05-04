@@ -171,6 +171,16 @@ ol {
 /* 767 --------------------------------------------------------------------------------*/
 @media screen and (max-width: 767px) {
 
+  .sidebar-wrapper {
+    margin-top: 0px;
+    transition: all 0.4s ease 0s;
+  }
+
+  .page-content-wrapper {
+    margin: 0px 0 0 0 !important;
+    transition: all 0.4s ease 0s;
+  }
+
   .gvc-tablas-container{
     display: none;
   }
@@ -222,6 +232,8 @@ ol {
   width: 25px;
   height: 25px;
 }
+
+
 
 @media (min-width: 767px) {
   .menuHamburguesa {

@@ -109,6 +109,12 @@
   padding: 10px 10px 10px 10px;
 }
 
+@media screen and (max-width: 767px) {
+  .listaTutoriales {
+    justify-content: center;
+  }
+}
+
 /*tajetas*/
 
 /*menu-lateral*/
