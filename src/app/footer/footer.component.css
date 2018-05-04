@@ -1,0 +1,36 @@
+
+/* footer */
+.gvc-footer {
+  width: 97%;
+  position: relative;
+  bottom: 0;
+  padding-top: 30px;
+}
+
+.gvc-direccion {
+  font-size: 9pt;
+  color: #666;
+}
+
+.gvc-derechos {
+  font-size: 8pt;
+  color: #666;
+}
+
+.gvc-menuLegal{
+  display: flex;
+  font-weight: bold;
+  padding: 0px;
+  color: #000000;
+  font-size: 13px;
+}
+
+.gvc-menuLegal li{
+  padding: 0px 15px;
+  border-right: 1px solid #ebeded;
+}
+
+.gvc-menuLegal li:first-child {
+  padding-left: 0 !important;
+}
+/* footer */

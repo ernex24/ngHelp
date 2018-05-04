@@ -1,0 +1,269 @@
+
+/*posts*/
+.listaTutoriales {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 0 5px;
+  padding: 0px;
+  justify-content: flex-start;
+  min-height: 668px;
+}
+
+.margin {
+  margin: 5px;
+}
+/*tajetas*/
+
+.titulo a:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.intro{
+  overflow: hidden;
+  padding: 50px 0 0 0;
+}
+
+.intro a:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.gvc-carbody {
+  bottom: 0;
+  position: absolute;
+  height: 41%;
+  width: 100%;
+  background-color: #ffffff;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 150ms;
+}
+
+.gvc-carbody:hover {
+  bottom: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #00A5AB;
+  color: #ffffff;
+  opacity: 0.9;
+  overflow: hidden;
+}
+.gvc-carbody:hover .categoria {
+  color: #ffffff;
+}
+
+.gvc-carbody:hover .intro {
+  padding: 5px 0 0 0;
+  transition: padding-top 0.5s;
+}
+
+.leyenda{
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+.categoria{
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #00A5AB;
+}
+
+.fecha{
+  font-size: 12px;
+  color: #333333;
+}
+
+.titulo{
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.tipo {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-self: center;
+}
+
+.tipo img {
+  margin: 7px 0px 0 160px;
+  display: flex;
+  height: 40px;
+  -webkit-filter: drop-shadow( 0px 0px 12px #000 );
+  filter: drop-shadow( 0px 0px 12px #000 );
+  cursor: pointer;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 10px 10px 10px 10px;
+}
+
+/*tajetas*/
+
+/*menu-lateral*/
+
+.Categorias_menu{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eeeeee;
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+  width: 100%;
+}
+
+.Categorias_titulo{
+  font-weight: bold;
+  background-color: #ffffff;
+  border-bottom: solid 1px #ffffff;
+  padding: 5px 0 5px 15px;
+  color: #666666 !important;
+}
+
+.Categorias_lista{
+  height: 100%;
+  border-bottom: solid 1px #ffffff;
+}
+
+.listaLink{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 0 8px 14px;
+  cursor: pointer;
+}
+
+.listaLink:hover{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #00a5ab;
+  color: #ffffff;
+}
+
+.active {
+  background-color: #00a5ab;
+  color: white;
+}
+/*menu-lateral*/
+
+/*menu-superior*/
+.form-control {
+  display: block;
+  width: 300px;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+  ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+  .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.float-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 75%;
+  opacity: 1;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  top: 0.5em;
+  left: 1.75rem;
+  z-index: 3;
+  line-height: 1;
+  padding: 0 1px;
+  color: #00a5ab;
+  background-color: #ffffff;
+}
+
+.marco{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 99%;
+  margin: 5px 0 10px 10px;
+  height: 60px;
+  border: 1px solid #eeeeee;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+.stepContainer{
+  border: 1px solid #dddddd;
+  padding: 15px 15px 15px 15px;
+  margin: 0 0px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.listContainer li{
+  padding: 7px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.listContainer li img{
+  align-self: center;
+  width: 100%;
+  max-width: 11132px;
+}
+
+.modal-header {
+  padding: 9px 20px 5px 33px !important;
+}
+
+.modal-xl{
+  width: 95%;
+  max-width: 1200px;
+  max-height: 90%;
+}
+
+.scroll-body{
+  overflow: auto !important;
+  height: 85vh !important;
+}
+
+vg-player {
+  font-family: 'videogular';
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1132px;
+  overflow: hidden;
+  background-color: black;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+
+
+/*menu-superior*/
+

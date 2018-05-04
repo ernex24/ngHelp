@@ -1,0 +1,130 @@
+
+<div class="wrapper" >
+  <div class="sidebar-wrapper"  [ngClass]="status ? 'open' : '!open'"  >
+    <ng-scrollbar>
+    <ul class="sidebar-nav Categorias_menu">
+      <!-- Todo cargar este menu dinamicamente desde el json  -->
+      <li class="Categorias_titulo">Buscar por categoría</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='all'" (click)="filterBy='all'">Todas</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='ordenes'" (click)="filterBy='ordenes'">Ordenes</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='conceptos'" (click)="filterBy='conceptos'">Conceptos</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='graficos'" (click)="filterBy='graficos'">Gráficos</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='favoritos'" (click)="filterBy='favoritos'">Favoritos</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='informes'" (click)="filterBy='informes'">Informes</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='markets'" (click)="filterBy='markets'">Markets</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='seguridad'" (click)="filterBy='seguridad'">Seguridad</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='fondosDeInversion'" (click)="filterBy='fondosDeInversion'">Fondos de inversión</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='informesMorningStar'" (click)="filterBy='informesMorningStar'">Informes Morning Star</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='cuentas'" (click)="filterBy='cuentas'">Cuentas</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='servicios'" (click)="filterBy='servicios'">Servicios</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='correspondencia'" (click)="filterBy='correspondencia'">Correspondencia</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='buscador'" (click)="filterBy='buscador'">Buscador</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='analisis'" (click)="filterBy='analisis'">Análisis</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='utilidadesWeb'" (click)="filterBy='utilidadesWeb'">Utilidades web</li>
+      <li class="Categorias_lista listaLink" [class.active]="filterBy=='MIFID'" (click)="filterBy='MIFID'">MIFID</li>
+    </ul>
+    </ng-scrollbar>
+  </div>
+
+  <div class="page-content-wrapper">
+    <div class="page-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="menuHamburguesa" (click)="menuLateral()" >
+              <img src="./../../assets/img/menuHamburguesa.svg">
+            </div>
+
+            <!-- todo Activar el selector por fecha o mas populares -->
+            <div class="marco">
+              <select name="selProductos" class="form-control">
+                <option value="fechas">Por fecha</option>
+                <option value="populares">Más populares</option>
+              </select>
+              <label class="float-label ng-scope">Producto</label>
+            </div>
+
+
+            <div class="listaTutoriales">
+
+              <div *ngFor="let ayuda of visibleImages | imageFilter: filterBy" class="tutoriales-items" >
+                <div class="card margin">
+                  <span class="tipo" *ngIf="ayuda.tipo === 'video'" (click)="openModal(post)"><img src="../../assets/img/play-button.svg"></span>
+                  <a  (click)="openModal(post)"><img class="card-img-top pointer" [src]="ayuda.portada" alt="Card image cap"/></a>
+                  <div class="card-body gvc-carbody">
+                    <ul class="leyenda">
+                      <li class="fecha">{{ayuda.fecha}}</li>
+                      <li class="categoria ">{{ayuda.categoria}}</li>
+                      <li class="titulo pointer"><a (click)="openModal(post)" >{{ayuda.titulo}}</a></li>
+                      <li class="intro pointer"><a (click)="openModal(post)" >{{ayuda.intro}}</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <ng-template #post>
+                  <div *ngIf="ayuda.tipo === 'post'">
+                  <div class="modal-header">
+                    <h2 class="modal-title pull-left">{{ayuda.titulo}}</h2>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body scroll-body">
+                    <ng-scrollbar>
+                    <div class="stepContainer">
+                      <p>{{ ayuda.intro }}</p>
+                    </div>
+                    <div class="stepContainer">
+                      <ul class="listContainer">
+                        <li><h2>{{ ayuda.post.primerTitulo }}</h2></li>
+                        <li><img [src]="ayuda.post.primeraImagen"></li>
+                        <li><p>{{ ayuda.post.primerParrafo }}</p></li>
+                      </ul>
+                      <ul class="listContainer">
+                        <li><h2>{{ ayuda.post.segundoTitulo }}</h2></li>
+                        <li><img [src]="ayuda.post.segundaImagen"></li>
+                        <li><p>{{ ayuda.post.segundoParrafo }}</p></li>
+                      </ul>
+                    </div>
+                    </ng-scrollbar>
+                  </div>
+                  </div>
+
+                  <div *ngIf="ayuda.tipo === 'video'">
+                  <div class="modal-header">
+                    <h2 class="modal-title pull-left">{{ayuda.titulo}}</h2>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body scroll-body">
+                    <ng-scrollbar>
+                    <div class="stepContainer">
+                      <p>{{ ayuda.intro }}</p>
+                    </div>
+                    <div class="stepContainer">
+                      <vg-player>
+                        <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+                          <source [src]="ayuda.urlVideo" type="video/mp4">
+                        </video>
+                      </vg-player>
+                    </div>
+                    </ng-scrollbar>
+                  </div>
+                  </div>
+                </ng-template>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
